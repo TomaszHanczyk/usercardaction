@@ -1,12 +1,13 @@
 ﻿using UserCard.Common;
 using UserCard.Common.Enums;
+using UserCard.Common.PublicInterfaces;
 
 namespace UserCard.DAL.Services
 {
-	public class CardService
+	public class CardService : ICardService
 	{
 		private readonly Dictionary<string, Dictionary<string, CardDetails>> _userCards = CreateSampleUserCards();
-		public async Task<CardDetails?> GetCardDetails(string userId, string cardNumber)
+		public async Task<CardDetails?> GetCardDetailsAsync(string userId, string cardNumber)
 		{
 			// At this point, we would typically make an HTTP call to an external service
 			// to fetch the data. For this example we use generated sample data.

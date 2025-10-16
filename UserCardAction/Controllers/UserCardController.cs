@@ -1,34 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Net;
+using UserCard.Common;
 using UserCard.Common.PublicInterfaces;
 
 namespace UserCardAction.Controllers
 {
 	[ApiController]
-	public class UserCardController(IActionsCardBL actionCardBl) : ControllerBase
+	public class UserCardController(IUserCardActionsBL userCardActionsBl) : ControllerBase
 	{
 		[HttpGet]
-		[Route("api/[controller]/actionscard")]
-		public IActionResult GetAsync(string userId, string cardNumber)
+		[Route("api/[controller]/usercardactions")]
+		public async Task<IActionResult> GetUserCardActionsAsync(string userId, string cardNumber)
 		{
-			var cardActions = actionCardBl.GetCardActions(userId, cardNumber);
+			UserCardActionsDetails? userCardActionsDetails = await userCardActionsBl.GetUserCardActionsAsync(userId, cardNumber);
 
-			if (cardActions == null)
-			{
-				return new ContentResult
-				{
-					StatusCode = (int)HttpStatusCode.InternalServerError,
-					Content = "An error occurred while processing the request.",
-					ContentType = "text/plain"
-				};
-			}
-
-			if (cardActions.CardDetails == null)
+			if (userCardActionsDetails == null)
 			{
 				return NotFound("User card not found.");
 			}
 
-			return Ok(cardActions);
+			return Ok(userCardActionsDetails);
 		}
 	}
 }

@@ -2,6 +2,6 @@
 {
 	public interface IUserCardDao
 	{
-		Task<CardDetails?> GetCardDetails(string userId, string cardNumber); 
+		Task<CardDetails?> GetCardDetailsAsync(string userId, string cardNumber); 
 	}
 }

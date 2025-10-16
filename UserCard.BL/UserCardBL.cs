@@ -5,9 +5,9 @@ namespace UserCard.BL
 {
 	public class UserCardBL(IUserCardDao userCardDao) : IUserCardBL
 	{
-		public Task<CardDetails?> GetCardDetails(string userId, string cardNumber)
+		public Task<CardDetails?> GetCardDetailsAsync(string userId, string cardNumber)
 		{
-			return userCardDao.GetCardDetails(userId, cardNumber);
+			return userCardDao.GetCardDetailsAsync(userId, cardNumber);
 		}
 	}
 }

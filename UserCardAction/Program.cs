@@ -4,13 +4,17 @@ using Microsoft.Extensions.Hosting;
 using UserCard.BL;
 using UserCard.Common.PublicInterfaces;
 using UserCard.DAL;
+using UserCard.DAL.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddScoped<IUserCardDao, UserCardDao>();
 builder.Services.AddScoped<IUserCardBL, UserCardBL>();
-builder.Services.AddScoped<IActionsCardDao, ActionsCardDao>();
-builder.Services.AddScoped<IActionsCardBL, ActionsCardBL>();
+builder.Services.AddScoped<ICardActionsDao, CardActionsDao>();
+builder.Services.AddScoped<ICardActionsBL, CardActionsBL>();
+builder.Services.AddScoped<ICardActionsService, CardActionsService>();
+builder.Services.AddScoped<ICardService, CardService>();
+builder.Services.AddScoped<IUserCardActionsBL, UserCardActionsBL>();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(c => {
 	c.SwaggerDoc("v1", new()

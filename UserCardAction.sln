@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserCard.Common", "UserCard
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserCard.BL", "UserCard.BL\UserCard.BL.csproj", "{EBAAF321-190F-4264-9368-8B8889E936BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserCardAction.xUnit", "UserCardAction.xUnit\UserCardAction.xUnit.csproj", "{5680E1FC-9448-494C-AC4C-BA7769069C9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EBAAF321-190F-4264-9368-8B8889E936BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBAAF321-190F-4264-9368-8B8889E936BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBAAF321-190F-4264-9368-8B8889E936BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5680E1FC-9448-494C-AC4C-BA7769069C9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5680E1FC-9448-494C-AC4C-BA7769069C9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5680E1FC-9448-494C-AC4C-BA7769069C9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5680E1FC-9448-494C-AC4C-BA7769069C9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
